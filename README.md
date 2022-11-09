@@ -1,2 +1,2 @@
-# Zadania stworzone na studiach w celach ćwiczeniowych.
-W repozytorium znajdziemy zadania z głębokiego uczenia
+# Zadania studenckie.
+W repozytorium znajdziemy zadania ćwiczeniowe wykonane w okresie studenckim z głębokiego uczenia.
