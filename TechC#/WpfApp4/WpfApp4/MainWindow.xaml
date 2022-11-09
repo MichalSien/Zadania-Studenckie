@@ -1,0 +1,28 @@
+﻿<Window x:Name="window" x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="Michał Sienkiewicz" Height="661.791" Width="825.672">
+    <Window.Resources>
+        <DataTemplate x:Key="ObrazDataTemplate">
+            <Image Height="100" Width="100" Stretch="Fill" StretchDirection="Both" Source="{Binding Obraz}" />
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <DataGrid x:Name="DataGrid1" HorizontalAlignment="Left" Height="300" Margin="240,83,0,0" VerticalAlignment="Top" Width="300" AutoGenerateColumns="False" ItemBindingGroup="{Binding RowDataList, ElementName=window}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="Identyfikator"/>
+                <DataGridTextColumn Binding="{Binding Nr}" ClipboardContentBinding="{x:Null}" Header="Numer"/>
+                <DataGridTextColumn Binding="{Binding Tytul}" ClipboardContentBinding="{x:Null}" Header="Tytuł"/>
+                <DataGridTextColumn Binding="{Binding Kwota}" ClipboardContentBinding="{x:Null}" Header="Kwota"/>
+                <DataGridTextColumn Binding="{Binding Opis}" ClipboardContentBinding="{x:Null}" Header="Opis"/>
+                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Obraz" CellTemplate="{Binding Mode=OneWay, Source={StaticResource ObrazDataTemplate}}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Wczytaj dane" HorizontalAlignment="Left" Margin="56,37,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+    </Grid>
+</Window>
